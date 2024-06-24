@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>database</title>
+  <style>
+    h2 {
+      text-transform: capitalize;
+      text-align: center;
+    }
+    body {
+    
+      width: 100%;
+      height: 100vh;
+      background-image:  url(/static/images/A24.webp);
+      background-size: cover;
+      background-position: center;
+    }
+    table {
+      width: 700px;
+      margin: 20px auto;
+      background-image:  url(/static/images/dna.jpg);
+    }
+    
+    table, th, td {
+      border: 1px solid white;
+      border-collapse: collapse;
+      padding: 15px;
+      text-align: center;
+      text-transform: capitalize;
+      font-size: 20px;
+    }
+    
+    table th {
+      background-color: #045c85;
+      color: white;
+    }
+    
+    img {
+      border: 1px solid #b7b6b6;
+    }
+    
+    button {
+      font-size: 18px;
+      padding: 8px;
+      text-transform: capitalize;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+    }
+    
+    .button_one {
+      background: #03a9f4;
+      color: white;
+    }
+    
+    .button_two {
+      background: #e91e63;
+      color: white;
+    }
+    
+    .bottom {
+      border-bottom: 2px solid #009688;
+    }
+  </style>
+</head>
+<body>
+  <h2>PRODUCTION DATABASE</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>AGE</th>
+        <th>ADDRESS</th>
+        <th>PHONE NO</th>
+        <th>CITY</th>
+        <th>STATE</th>
+        <th>COUNTRY</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for model in models %}
+      <tr>
+        <td>{{ model.firstname }}</td>
+        <td>{{ model.lastname }}</td>
+        <td>{{ model.age }}</td>
+        <td>{{ model.address }}</td>
+        <td>{{ model.phone }}</td>
+        <td>{{ model.city }}</td>
+        <td>{{ model.state }}</td>
+        <td>{{ model.country }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MODEL</title>
+</head>
+<style>
+    :root {
+        --blue: #05c;
+        --grey: #999;
+        --dark-grey: #555;
+   }
+    body {
+      background:url("/static/images/A47.jpg");
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-size: 100% 100%;
+   }
+    form {
+        max-width: 20em;
+        margin: auto;
+   }
+    .floating-label-input {
+        display: flex;
+        flex-flow: column-reverse;
+        margin-top: -1em;
+        margin-bottom: 2em;
+   }
+    .floating-label-input input {
+        line-height: 1.5em;
+        padding: 0;
+        border: none;
+        border-bottom: 2px solid var(--dark-grey);
+        background: transparent;
+        display: block;
+        height: 40px;
+   }
+    .floating-label-input input:focus {
+        outline: none;
+        border-color: var(--blue);
+        border-width: 3px;
+   }
+    .floating-label-input input:placeholder-shown ~ label {
+        transform: translateY(2em) scale(1);
+        opacity: 0;
+   }
+    .floating-label-input input:not(:placeholder-shown) ~ label {
+        transform: translateY(0) scale(0.8);
+        opacity: 1;
+   }
+    .floating-label-input label {
+        color: var(--grey);
+        pointer-events: none;
+        transform-origin: left bottom;
+        transition: all 200ms ease;
+   }
+
+
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    background: linear-gradient(90deg, lightblue 0%, deepskyblue 50%, lightblue 100%);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+
+.sub{
+    color: white;
+    font-family: 'source sans 3',sans-serif;
+    font-weight: 700;
+    margin-left: 30px;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Style the "back to home" link */
+.back-to-home {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+    
+</style>
+<body>
+  <center><a href="{% url 'Home_4' %}" style="font-size: 25px;color:red;"><strong>HOME</strong></a></cred
+  <center><h1 style="color:rgb(0, 51, 171);">{{ prediction_text }}</h1></center>
+    <form action="" method="post">
+      {% csrf_token %}
+      <h2>CIRRHOSIS PREDICTION</h2> <br>
+        <!-- <div class="form-title">CIRRHOSIS DISEASE DETECTION</div> -->
+            <div class="floating-label-input">
+                
+                <input type="text" name="Age" placeholder="Enter AGE" >
+                <label for="Age">Age</label>
+            </div>
+
+            <div class="floating-label-input">
+                <input type="number" name="Gender" placeholder="Enter Gender" >
+                <label for="Gender">Gender</label>
+            </div>
+
+            <div class="floating-label-input">
+                
+                <input type="number" name="Weight" placeholder="Enter Weight" >
+                <label for="Weight">Weight</label>
+            </div>
+
+            <div class="floating-label-input">
+                
+                <input type="number" name="Height" placeholder="Enter Height" >
+                <label for="Height">Height</label>
+            </div>
+
+            <div class="floating-label-input">
+                
+                <input type="number" name="Body_Mass_Index" placeholder="Enter Body_Mass_Index" >
+                <label for="Body_Mass_Index">Body_Mass_Index</label>
+            </div>
+
+            <div class="floating-label-input">
+                
+                <input type="number" name="Obesity" placeholder="Enter Obesity" >
+                <label for="Obesity">Obesity</label>
+            </div>
+            <div class="floating-label-input">
+              
+              <input type="number" name="Waist" placeholder="Enter Waist" >
+              <label for="Waist">Waist</label>
+            </div>
+          
+            <div class="floating-label-input">
+              
+              <input type="number" name="Maximum_Blood_Pressure" placeholder="Enter Maximum_Blood_Pressure" >
+              <label for="Maximum_Blood_Pressure">Maximum_Blood_Pressure</label>
+            </div>
+            <div class="floating-label-input">
+              
+              <input type="number" name="Minimum_Blood_Pressure" placeholder="Enter Minimum_Blood_Pressure" >
+              <label for="Minimum_Blood_Pressure">Minimum_Blood_Pressure</label>
+            </div>
+            <div class="floating-label-input">
+              
+              <input type="number" name="Good_Cholesterol" placeholder="Enter Good_Cholesterol" >
+              <label for="Good_Cholesterol">Good_Cholesterol</label>
+            </div>
+            <div class="floating-label-input">
+              
+              <input type="number" name="Bad_Cholesterol" placeholder="Enter Bad_Cholesterol" >
+              <label for="Bad_Cholesterol">Bad_Cholesterol</label>
+            </div>
+            <div class="floating-label-input">
+              
+              <input type="number" name="Total_Cholesterol" placeholder="Enter Total_Cholesterol" >
+              <label for="Total_Cholesterol">Total_Cholesterol</label>
+            </div>
+            <div class="floating-label-input">
+                
+                <input type="number" name="Dyslipidemia" placeholder="Enter Dyslipidemia" >
+                <label for="Dyslipidemia">Dyslipidemia</label>
+              </div>
+              <div class="floating-label-input">
+                
+                <input type="number" name="PVD" placeholder="Enter PVD" >
+                <label for="PVD">PVD</label>
+              </div>
+              <div class="floating-label-input">
+                
+                <input type="number" name="Physical_Activity" placeholder="Enter Physical_Activity" >
+                <label for="Physical_Activity">Physical_Activity</label>
+              </div>
+              <div class="floating-label-input">
+                
+                <input type="number" name="Education" placeholder="Enter Education" >
+                <label for="Education">Education</label>
+              </div>
+              <div class="floating-label-input">
+                
+                <input type="number" name="Unmarried" placeholder="Enter Unmarried" >
+                <label for="Unmarried">Unmarried</label>
+              </div>
+              <div class="floating-label-input">
+                
+                <input type="number" name="Income" placeholder="Enter Income" >
+                <label for="Income">Income</label>
+              </div>
+              <div class="floating-label-input">
+                
+                <input type="number" name="Source_of_Care" placeholder="Enter Source_of_Care" >
+                <label for="Source_of_Care">Source_of_Care</label>
+              </div>
+              <div class="floating-label-input">
+                
+                <input type="number" name="PoorVision" placeholder="Enter PoorVision" >
+                <label for="PoorVision">PoorVision</label>
+              </div>
+              <div class="floating-label-input">
+                
+                <input type="number" name="Alcohol_Consumption" placeholder="Enter Alcohol_Consumption" >
+                <label for="Alcohol_Consumption">Alcohol_Consumption</label>
+              </div>
+              <div class="floating-label-input">
+                
+                <input type="number" name="HyperTension" placeholder="Enter HyperTension" >
+                <label for="HyperTension">HyperTension</label>
+              </div>
+              <div class="floating-label-input">
+                
+                <input type="number" name="Family_HyperTension" placeholder="Enter Family_HyperTension" >
+                <label for="Family_HyperTension">Family_HyperTension</label>
+              </div>
+              <div class="floating-label-input">
+                
+                <input type="number" name="Diabetes" placeholder="Enter Diabetes" >
+                <label for="Diabetes">Diabetes</label>
+              </div>
+              <div class="floating-label-input">
+                
+                <input type="number" name="Family_Diabetes" placeholder="Enter Family_Diabetes" >
+                <label for="Family_Diabetes">Family_Diabetes</label>
+              </div>
+              <div class="floating-label-input">
+                <input type="number" name="Hepatitis" placeholder="Enter Hepatitis" >
+                <label for="Hepatitis">Hepatitis</label>
+                
+              </div>
+              <div class="floating-label-input">
+                
+                <input type="number" name="Family_Hepatitis" placeholder="Enter Family_Hepatitis" >
+                <label for="Family_Hepatitis">Family_Hepatitis</label>
+              </div>
+              <div class="floating-label-input">
+                
+                <input type="number" name="Chronic_Fatigue" placeholder="Enter Chronic_Fatigue" >
+                <label for="Chronic_Fatigue">Chronic_Fatigue</label>
+              </div>
+              <div><button type="submit" class="submit">Submit</button></div>
+        </div>
+        
+        
+    </form>
+    <div class="container">
+      <a class="back-to-home" href="{% url 'Home_4' %}">Back to Home</a>
+  </div>
+
+       
+        
+</div>
+</body>
+</html>

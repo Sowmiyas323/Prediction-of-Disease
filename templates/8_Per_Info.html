@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERSONAL INFORMATION</title>
+    <style>
+        *,
+html,
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+html {
+    background-image: url('/static/images/A60.jpg');
+    background-size: cover; /* You can use 'cover', 'contain', or specific dimensions */
+  background-repeat: no-repeat; /* 'no-repeat' prevents the image from repeating */
+  background-position: center center;
+}
+
+.container {
+  width: 440px;
+  margin: 30px auto;
+  display: block;
+  padding: 10px 50px 50px;
+}
+h2 {
+  text-align: center;
+  margin: 40px;
+  font-size: 40PX;
+  color: rgb(255, 255, 255);
+}
+h2 small {
+  font-weight: normal;
+  display: block;
+}
+
+.inputwrapper {
+  position: relative;
+  margin-bottom: 40px;
+}
+input,
+select {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: 1px solid #686868;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(137, 94, 211, 0.1);
+}
+input:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+label {
+  color: #686868;
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  pointer-events: none;
+  left: 8px;
+  top: 12px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+input:not(:required) ~ label,
+select ~ label {
+  color: #686868 !important;
+  font-size: 16px;
+}
+
+input:focus ~ label,
+input:valid ~ label,
+select ~ label {
+  top: -20px;
+  left: 0px;
+  font-size: 14px;
+  color: #afcb09;
+}
+
+input:not(:required):focus ~ label,
+select:focus ~ label {
+  color: #afcb09 !important;
+}
+
+.balken {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.balken:before,
+.balken:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #afcb09;
+  transition: 0.25s ease all;
+  -moz-transition: 0.25s ease all;
+  -webkit-transition: 0.25s ease all;
+}
+.balken:before {
+  left: 50%;
+}
+.balken:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus ~ .balken:before,
+input:focus ~ .balken:after {
+  width: 50%;
+}
+
+    </style>
+</head>
+<body>
+        <div class="container">
+
+            <h2>PERSONAL  <small>DETAILS</small></h2>
+          
+            <form method="post" action="{% url 'Per_Info_8' %}">
+                {% csrf_token %}
+          
+              <div class="inputwrapper">
+                <input type="text" required id="firstname" name="firstname">
+                <span class="balken"></span>
+                <label>First_Name:</label>
+              </div>
+              <div class="inputwrapper">
+                <input type="text" required id="lastname" name="lastname">
+                <span class="balken"></span>
+                <label>Last_Name:</label>
+              </div>
+              <div class="inputwrapper">
+                <input type="number" required id="age" name="age">
+                <span class="balken"></span>
+                <label>Age:</label>
+              </div>
+              <div class="inputwrapper">
+                <input type="text" required id="address" name="address">
+                <span class="balken"></span>
+                <label>Address:</label>
+              </div>
+              <div class="inputwrapper">
+                <input type="number" required id="phone" name="phone">
+                <span class="balken"></span>
+                <label>Phone_Number:</label>
+              </div>
+              <div class="inputwrapper">
+                <input type="text" required id="city" name="city">
+                <span class="balken"></span>
+                <label>City:</label>
+              </div>
+              <div class="inputwrapper">
+                <input type="text" required id="state" name="state">
+                <span class="balken"></span>
+                <label>State:</label>
+              </div>
+              <div class="inputwrapper">
+                <input type="text" required id="country" name="country">
+                <span class="balken"></span>
+                <label>Country:</label>
+              </div>
+              <div class="inputwrapper">
+                <input type="submit" value="Submit">
+              </div>
+            </form>
+        </div>
+</body>
+</html>

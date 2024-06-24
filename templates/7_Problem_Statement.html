@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROBLEM STATEMENT</title>
+</head>
+    <STYle>
+      @import "https://unpkg.com/open-props" layer(design.system);
+      @import "https://unpkg.com/open-props/normalize.min.css" layer(demo.support);
+      @import "https://unpkg.com/open-props/buttons.min.css" layer(demo.support);
+      
+      @import "https://unpkg.com/open-props/theme.light.switch.min.css" layer(demo.theme);
+      @import "https://unpkg.com/open-props/theme.dark.switch.min.css" layer(demo.theme);
+      
+      @layer demo {
+        button {
+          --_border: none;
+          --_highlight: none;
+          transition: 
+            transform 1s var(--ease-spring-5),
+            box-shadow 1s var(--ease-spring-5),
+            outline-offset 145ms var(--ease-4);
+          box-shadow: var(--shadow-4);
+          
+          &:hover {
+            --_bg: var(--surface-2);
+          }
+          
+          &:active {
+            transform: scale(.9);
+            box-shadow: var(--shadow-1);
+          }
+        }
+      }
+      
+      @layer demo.support {
+        body {
+          font-size: var(--font-size-fluid-1);
+          display: grid;
+          grid: 1fr / 1fr 1fr;
+          
+          & > * {
+            display: grid;
+            place-content: center;
+          }
+        } 
+        
+        .dark, .light {
+          color: var(--text-1);
+          background: var(--surface-1);
+        }
+      }
+    </STYle>
+<body>
+  <div class="light">
+    <div class="content">
+      <h1>BASE PAPER DEMERITS</h1>
+      <p>•	They did not implement the deployment process.</p>
+      <p>•	They did just for image processing</p>
+      <p>•	More complex process to train the data.</p>
+      <P>•	They did not using machine learning techniques.</P>
+    </div>
+  </div>
+  
+  <div class="dark">
+    <div class="content">
+      <h1>PROPOSED SYSTEM MERITS</h1>
+      <P>•	We build a production level application for deployment purpose.</P>
+      <P>•	We build an advance machine learning techniques to build a predictive model.</P>
+      <P>•	We compared more than a two architecture to getting better accuracy level.</P>
+      <P>•	We train the structured data for machine learning model. </P>
+    </div>
+  </div>
+</body>
+</html>

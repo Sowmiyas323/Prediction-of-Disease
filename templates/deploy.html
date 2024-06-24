@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background: var(--color-darkblue);
+        background-image: linear-gradient(
+            115deg,
+            rgba(58, 58, 158, 0.8),
+            rgba(136, 136, 206, 0.7)
+        ),
+        url(/static/images/A101.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    
+    body {
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: var(--color-white);
+        margin: 0;
+    }
+    
+    .heading {
+        text-align: center;
+        color: white;
+    }
+    #description {
+        text-align: center;
+        color: white;
+        font-style: italic;
+        font-weight: 300;
+    }
+    .form {
+        background: var(--color-purple-alpha);
+        padding: 2.5rem 0.625rem;
+        width: 28%;
+        border-radius: 10px;
+        display:inline-block;
+        text-align: left;
+        color: white;
+    }
+    
+    .form-control {
+        width: 100%;
+        height: 35px;
+        box-sizing: border-box;
+    
+        border-radius: 3px;
+    }
+    .form-contro {
+        width: 101%;
+        height: 45px;
+        border-radius: 3px;
+    }
+    
+    .clue {
+        font-size: 14px;
+    }
+    .main-div {
+        display: block;
+        text-align: center;
+        
+    
+    }
+    
+    .comment{
+        width: 100%;
+        min-height: 120px;
+    }
+    .submit-button {
+        display: block;
+        width: 101%;
+        padding: 0.75rem;
+        background-color:#1ee494;
+        color: inherit;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+    .label {
+        margin-bottom: 2.5rem;
+    }
+    
+    .form-para {
+        margin-bottom: 2px;
+        margin-top: 2px;
+    }
+    .input-radio,
+    .input-checkbox {
+        display: inline-block;
+        min-height: 1.05rem;
+        min-width: 1.05rem;
+    }
+    
+    /**.form-sug {
+        width: 30%;
+        height: 30px;
+        border-radius: 5px;
+    } **/
+    .back-to-home-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff; /* Adjust the background color */
+        color: #fff; /* Adjust the text color */
+        text-decoration: none;
+        border-radius: 5px; /* Rounded corners */
+      }
+      
+      .back-to-home-button:hover {
+        background-color: #0056b3; /* Change the background color on hover */
+      }
+      
+  
+</style>
+<body>
+    <html> 
+  <head> 
+    <title>Kidney disease prediction Form</title>
+  </head>
+  <body> 
+    <main> 
+      <div id="heading" class="heading">
+      <h1 id="title">
+        KIDNEY DISEASE PREDICTION
+      </h1>  
+      <p id="description">
+        GIVE VALUES TO CHECK YOUR RESULT </p>
+        <center><h1 style="color:rgb(3, 0, 168);">{{ prediction_text }}</h1></center>
+      </div>
+
+          <div class="main-div">
+      <form id="survey-form" class="form" method="POST">
+        {% csrf_token %}
+        <div id="form-group" >
+        <label for name class="label">Bp</label><br>
+        <input class="form-control" type="number" id="Bp" name="Bp" placeholder="Enter your Bp" required><br> <br>
+        <label for name class="label">Sg</label><br>
+        <input class="form-control" type="number" id="Sg" name="Sg" placeholder="Enter your Sg" required><br> <br>
+        <label for name class="label">Al</label><br>
+        <input class="form-control" type="number" id="Al" name="Al" placeholder="Enter your Al" required><br> <br>
+        <label for name class="label">Su</label><br>
+        <input class="form-control" type="number" id="Su" name="Su" placeholder="Enter your Su" required><br> <br>
+        <label for name class="label">Rbc</label><br>
+        <input class="form-control" type="number" id="Rbc" name="Rbc" placeholder="Enter your Rbc" required><br> <br>
+        <label for name class="label">Bu</label><br>
+        <input class="form-control" type="number" id="Bu" name="Bu" placeholder="Enter your Bu" required><br> <br>
+        <label for name class="label">Sc</label><br>
+        <input class="form-control" type="number" id="Sc" name="Sc" placeholder="Enter your Sc" required><br> <br>
+        <label for name class="label">Sod</label><br>
+        <input class="form-control" type="number" id="Sod" name="Sod" placeholder="Enter your Sod" required><br> <br>
+        <label for name class="label">Pot</label><br>
+        <input class="form-control" type="number" id="Pot" name="Pot" placeholder="Enter your Pot" required><br> <br>
+        <label for name class="label">Hemo</label><br>
+        <input class="form-control" type="number" id="Hemo" name="Hemo" placeholder="Enter your Hemo" required><br> <br>
+        <label for name class="label">Wbcc</label><br>
+        <input class="form-control" type="number" id="Wbcc" name="Wbcc" placeholder="Enter your Wbcc" required><br> <br>
+        <label for name class="label">Rbcc</label><br>
+        <input class="form-control" type="number" id="Rbcc" name="Rbcc" placeholder="Enter your Rbcc" required><br> <br>
+        <label for name class="label">Htn</label><br>
+        <input class="form-control" type="number" id="Htn" name="Htn" placeholder="Enter your Htn" required><br> <br>
+        
+      </div>
+
+    
+    
+        <div id="form-group">
+          <button type="submit" id="submit" class="submit-button">
+        Submit
+      </button> </div>
+          
+         </form>
+         <div>
+            
+            </div>
+            <a href="Home_4" class="back-to-home-button">Back to Home</a>
+      </div>
+      
+
+    </main>     
+  </body>
+</html>
+</body>
+</html>
